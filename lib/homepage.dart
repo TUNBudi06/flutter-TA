@@ -62,11 +62,12 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
 class ConvertPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 4,
         centerTitle: false,
@@ -79,199 +80,122 @@ class ConvertPage extends StatelessWidget {
           "Transfer",
           style: TextStyle(
             fontWeight: FontWeight.w400,
-            fontStyle: FontStyle.normal,
             fontSize: 17,
-            color: Color(0xffffffff),
+            color: Colors.white,
           ),
         ),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Color(0xffffffff),
-          size: 34,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            size: 34,
+          ),
+          onPressed: () {
+            // Handle back button press
+          },
         ),
       ),
-      body: Align(
-        alignment: Alignment.center,
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.account_circle_outlined,
-                      color: Color(0xff212435),
-                      size: 45,
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: TextField(
-                        controller: TextEditingController(),
-                        obscureText: false,
-                        textAlign: TextAlign.start,
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14,
-                          color: Color(0xff000000),
-                        ),
-                        decoration: InputDecoration(
-                          disabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                            borderSide:
-                                BorderSide(color: Color(0xff000000), width: 1),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                            borderSide:
-                                BorderSide(color: Color(0xff000000), width: 1),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                            borderSide:
-                                BorderSide(color: Color(0xff000000), width: 1),
-                          ),
-                          hintText: "Hint Text",
-                          hintStyle: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 14,
-                            color: Color(0xff000000),
-                          ),
-                          filled: true,
-                          fillColor: Color(0xfff2f2f3),
-                          isDense: false,
-                          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.attach_money,
-                      color: Color(0xff212435),
-                      size: 45,
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: TextField(
-                        controller: TextEditingController(),
-                        obscureText: false,
-                        textAlign: TextAlign.start,
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 14,
-                          color: Color(0xff000000),
-                        ),
-                        decoration: InputDecoration(
-                          disabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                            borderSide:
-                                BorderSide(color: Color(0xff000000), width: 1),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                            borderSide:
-                                BorderSide(color: Color(0xff000000), width: 1),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                            borderSide:
-                                BorderSide(color: Color(0xff000000), width: 1),
-                          ),
-                          hintText: "Hint Text",
-                          hintStyle: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontStyle: FontStyle.normal,
-                            fontSize: 14,
-                            color: Color(0xff000000),
-                          ),
-                          filled: true,
-                          fillColor: Color(0xfff2f2f3),
-                          isDense: false,
-                          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Icon(
-                      Icons.credit_card,
-                      color: Color(0xff212435),
-                      size: 45,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                      child: Text(
-                        "Text",
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.clip,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.normal,
-                          fontSize: 20,
-                          color: Color(0xff000000),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-                child: MaterialButton(
-                  onPressed: () {},
-                  color: Color(0xff0062ff),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(height: 30),
+            _buildTextFieldWithIcon(Icons.account_circle_outlined, "Sender", "Enter sender's details"),
+            SizedBox(height: 20),
+            _buildTextFieldWithIcon(Icons.attach_money, "Amount", "Enter transfer amount"),
+            SizedBox(height: 20),
+            _buildTextWithIcon(Icons.credit_card, "Payment Method"),
+            Spacer(),
+            SizedBox(
+              height: 40,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Handle button press
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff0062ff),
                   elevation: 10,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(10),
                     side: BorderSide(color: Color(0xff0046da), width: 1),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Text(
-                    "kirim",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                    ),
+                ),
+                child: Text(
+                  "Send",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
                   ),
-                  textColor: Color(0xffffffff),
-                  height: 40,
-                  minWidth: 140,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+    );
+  }
+
+  Widget _buildTextFieldWithIcon(IconData icon, String label, String hintText) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          color: Color(0xff212435),
+          size: 45,
+        ),
+        SizedBox(width: 10),
+        Expanded(
+          child: TextField(
+            controller: TextEditingController(),
+            textAlign: TextAlign.start,
+            maxLines: 1,
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+              color: Colors.black,
+            ),
+            decoration: InputDecoration(
+              hintText: hintText,
+              hintStyle: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 14,
+                color: Colors.black,
+              ),
+              filled: true,
+              fillColor: Color(0xfff2f2f3),
+              isDense: false,
+              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(4),
+                borderSide: BorderSide.none,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTextWithIcon(IconData icon, String label) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          color: Color(0xff212435),
+          size: 45,
+        ),
+        SizedBox(width: 10),
+        Text(
+          label,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 20,
+            color: Colors.black,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -280,278 +204,138 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 4,
         centerTitle: true,
         automaticallyImplyLeading: false,
-        backgroundColor: Color(0xffffffff),
+        backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(16.0),
-              bottomRight: Radius.circular(16.0)),
+            bottomLeft: Radius.circular(16.0),
+            bottomRight: Radius.circular(16.0),
+          ),
         ),
         title: Text(
           "Profile",
           style: TextStyle(
             fontWeight: FontWeight.w700,
-            fontStyle: FontStyle.normal,
             fontSize: 20,
-            color: Color(0xff000000),
+            color: Colors.black,
           ),
         ),
-        leading: Icon(
-          Icons.arrow_back,
-          color: Color(0xff000000),
-          size: 24,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 24,
+          ),
+          onPressed: () {
+            // Handle back button press
+          },
         ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(
-                height: 16,
-                width: 16,
-              ),
-              Text(
-                "Edit Profile",
-                textAlign: TextAlign.start,
-                overflow: TextOverflow.clip,
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.normal,
-                  fontSize: 16,
-                  color: Color(0xff535252),
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.fromLTRB(0, 16, 0, 30),
-                padding: EdgeInsets.all(0),
-                width: 140,
-                height: 140,
-                decoration: BoxDecoration(
-                  color: Color(0x1f000000),
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Color(0x4d9e9e9e), width: 1),
-                ),
-                child: Container(
-                  height: 120,
-                  width: 120,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: Image.network(
-                      "https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg",
-                      fit: BoxFit.cover),
-                ),
-              ),
-              TextField(
-                controller: TextEditingController(text: "Anthony"),
-                obscureText: false,
-                textAlign: TextAlign.start,
-                maxLines: 1,
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.normal,
-                  fontSize: 16,
-                  color: Color(0xff000000),
-                ),
-                decoration: InputDecoration(
-                  disabledBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide: BorderSide(color: Color(0xff000000), width: 1),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide: BorderSide(color: Color(0xff000000), width: 1),
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide: BorderSide(color: Color(0xff000000), width: 1),
-                  ),
-                  labelText: "Last Name",
-                  labelStyle: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16,
-                    color: Color(0xff6f6d6d),
-                  ),
-                  hintText: "Enter Text",
-                  hintStyle: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 14,
-                    color: Color(0xff000000),
-                  ),
-                  filled: true,
-                  fillColor: Color(0x00ffffff),
-                  isDense: false,
-                  contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
-                child: TextField(
-                  controller: TextEditingController(text: "Smith"),
-                  obscureText: false,
-                  textAlign: TextAlign.start,
-                  maxLines: 1,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16,
-                    color: Color(0xff000000),
-                  ),
-                  decoration: InputDecoration(
-                    disabledBorder: UnderlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide:
-                          BorderSide(color: Color(0xff000000), width: 1),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide:
-                          BorderSide(color: Color(0xff000000), width: 1),
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide:
-                          BorderSide(color: Color(0xff000000), width: 1),
-                    ),
-                    labelText: "First Name",
-                    labelStyle: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 16,
-                      color: Color(0xff6f6d6d),
-                    ),
-                    hintText: "Enter Text",
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 14,
-                      color: Color(0xff000000),
-                    ),
-                    filled: true,
-                    fillColor: Color(0x00ffffff),
-                    isDense: false,
-                    contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                  ),
-                ),
-              ),
-              TextField(
-                controller: TextEditingController(text: "anthonysmith12"),
-                obscureText: false,
-                textAlign: TextAlign.start,
-                maxLines: 1,
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.normal,
-                  fontSize: 16,
-                  color: Color(0xff000000),
-                ),
-                decoration: InputDecoration(
-                  disabledBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide: BorderSide(color: Color(0xff000000), width: 1),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide: BorderSide(color: Color(0xff000000), width: 1),
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                    borderRadius: BorderRadius.circular(4.0),
-                    borderSide: BorderSide(color: Color(0xff000000), width: 1),
-                  ),
-                  labelText: "Username",
-                  labelStyle: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16,
-                    color: Color(0xff6f6d6d),
-                  ),
-                  hintText: "Enter Text",
-                  hintStyle: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 14,
-                    color: Color(0xff000000),
-                  ),
-                  filled: true,
-                  fillColor: Color(0x00ffffff),
-                  isDense: false,
-                  contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
-                child: TextField(
-                  controller:
-                      TextEditingController(text: "anthonysmith@gmail.com"),
-                  obscureText: false,
-                  textAlign: TextAlign.start,
-                  maxLines: 1,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 16,
-                    color: Color(0xff000000),
-                  ),
-                  decoration: InputDecoration(
-                    disabledBorder: UnderlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide:
-                          BorderSide(color: Color(0xff000000), width: 1),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide:
-                          BorderSide(color: Color(0xff000000), width: 1),
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                      borderSide:
-                          BorderSide(color: Color(0xff000000), width: 1),
-                    ),
-                    labelText: "Email",
-                    labelStyle: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 16,
-                      color: Color(0xff6f6d6d),
-                    ),
-                    hintText: "Enter Text",
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.normal,
-                      fontSize: 14,
-                      color: Color(0xff000000),
-                    ),
-                    filled: true,
-                    fillColor: Color(0x00ffffff),
-                    isDense: false,
-                    contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 8),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 16,
-                width: 16,
-              ),
+              SizedBox(height: 16),
+              _buildSectionTitle("Edit Profile"),
+              SizedBox(height: 16),
+              _buildProfileImage(),
+              SizedBox(height: 30),
+              _buildTextField("Last Name", "Anthony"),
+              SizedBox(height: 16),
+              _buildTextField("First Name", "Smith"),
+              SizedBox(height: 16),
+              _buildTextField("Username", "anthonysmith12"),
+              SizedBox(height: 16),
+              _buildTextField("Email", "anthonysmith@gmail.com"),
+              SizedBox(height: 16),
             ],
           ),
         ),
       ),
     );
   }
+
+  Widget _buildSectionTitle(String title) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 16,
+        color: Color(0xff535252),
+      ),
+    );
+  }
+
+  Widget _buildProfileImage() {
+    return Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.fromLTRB(0, 16, 0, 30),
+      width: 140,
+      height: 140,
+      decoration: BoxDecoration(
+        color: Color(0x1f000000),
+        shape: BoxShape.circle,
+        border: Border.all(color: Color(0x4d9e9e9e), width: 1),
+      ),
+      child: ClipOval(
+        child: Image.network(
+          "https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg",
+          fit: BoxFit.cover,
+          width: 120,
+          height: 120,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextField(String labelText, String initialValue) {
+    return TextField(
+      controller: TextEditingController(text: initialValue),
+      textAlign: TextAlign.start,
+      style: TextStyle(
+        fontWeight: FontWeight.w700,
+        fontSize: 16,
+        color: Colors.black,
+      ),
+      decoration: InputDecoration(
+        labelText: labelText,
+        labelStyle: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 16,
+          color: Color(0xff6f6d6d),
+        ),
+        hintText: "Enter Text",
+        hintStyle: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 14,
+          color: Colors.black,
+        ),
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 8),
+        enabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(color: Colors.black, width: 1),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(color: Colors.black, width: 1),
+        ),
+        disabledBorder: UnderlineInputBorder(
+          borderRadius: BorderRadius.circular(4.0),
+          borderSide: BorderSide(color: Colors.black, width: 1),
+        ),
+      ),
+    );
+  }
 }
+
 
 class HomeContent extends StatelessWidget {
   @override

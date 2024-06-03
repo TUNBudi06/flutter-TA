@@ -74,8 +74,30 @@ class profile extends StatelessWidget {
                     shape: BoxShape.circle,
                   ),
                   child: Image.network(
-                      "https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg",
-                      fit: BoxFit.cover),
+                    "https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg",
+                    fit: BoxFit.cover,
+                    loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1)
+                              : null,
+                        ),
+                      );
+                    },
+                    errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                      return Center(
+                        child: Icon(
+                          Icons.error,
+                          color: Colors.red,
+                          size: 50.0,
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
               TextField(
